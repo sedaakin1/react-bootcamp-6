@@ -1,6 +1,7 @@
 .product-item{
     border: 1px solid #ccc;
     width: 200px;
+    
 }
 
 .product-image{
@@ -9,6 +10,7 @@
 
 .product-image img{
     width: 100%;
+    
 }
 
 .product-info{

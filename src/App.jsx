@@ -1,10 +1,11 @@
 import ProductItem from "./ProductItem";
+import Products from "./Products";
 
 function App() {
     
   return (
     <div>
-      <ProductItem />
+      <Products />
     </div>
   );
 }
