@@ -1,10 +1,14 @@
 /** @format */
 
 import ProductItem from "./ProductItem";
-import "./Products.css";
+import { useState } from "react";
 import { productsData } from "./data/productsData";
+import "./Products.css";
 
 function Products() {
+
+  const [globalTitle,setGlobalTitle] = useState("Küpe")
+
   return (
     <div>
       <h1>Products Component</h1>
@@ -16,6 +20,8 @@ function Products() {
                 image={product.image}
                 title={product.title}
                 price={product.price}
+                globalTitle={globalTitle}
+                setGlobalTitle={setGlobalTitle}
              />
             ))
         }

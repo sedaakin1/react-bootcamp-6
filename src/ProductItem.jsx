@@ -1,6 +1,11 @@
 import "./ProductItem.css";
 
 function ProductItem(props) {
+
+  function handleTitleChange(){
+    props.setGlobalTitle("Yüzük")
+  }
+
   
   
   return (
@@ -9,8 +14,9 @@ function ProductItem(props) {
         <img src={props.image} alt="Soda" />
       </div>
       <div className="product-info">
-        <b className="product-title">{props.title}</b>
+        <b className="product-title">{props.globalTitle}</b>
         <span className="product-price">{props.price}₺</span>
+        <button onClick={handleTitleChange}>Title Değiştir!</button>
       </div>
     </div>
   );
