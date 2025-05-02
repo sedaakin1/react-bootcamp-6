@@ -7,7 +7,7 @@ import "./Products.css";
 
 function Products() {
 
-  const [globalTitle,setGlobalTitle] = useState("Küpe")
+  const [globalTitle,setGlobalTitle] = useState("")
 
   return (
     <div>
