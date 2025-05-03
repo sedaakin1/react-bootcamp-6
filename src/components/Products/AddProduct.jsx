@@ -2,7 +2,7 @@
 import React, { useState } from "react";
  import Button from "../UI/Button";
  import "./AddProduct.css";
-// import "./AddProduct.css";
+
 const AddProduct = () => {
 
     const [title, setTitle] = useState("");
