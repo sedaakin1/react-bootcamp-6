@@ -5,35 +5,48 @@ import React, { useState } from "react";
 
 const AddProduct = () => {
 
-    const [title, setTitle] = useState("");
-    const [price, setPrice] = useState(0);
-    const [imageUrl, setImageUrl] = useState("");
+    const [product, setProduct] = useState({
 
-    function handleTitleChange(event){
-        setTitle(event.target.value)
-    }
-    function handlePriceChange(event){
-        setTitle(event.target.value)
-    }function handleImageChange(event){
-        setTitle(event.target.value)
-    }
+        title:"",
+        price: "",
+        imageUrl: "",
+    })
+
+    function handleChange({target: {name, value}}){
+        setProduct({...product,[name]: value })
+    }       
+
+
+    // const [title, setTitle] = useState("");
+    // const [price, setPrice] = useState(0);
+    // const [imageUrl, setImageUrl] = useState("");
+
+    // function handleTitleChange(event){
+    //     setTitle(event.target.value)
+    // }
+    // function handlePriceChange(event){
+    //     setPrice(event.target.value)
+    // }
+    // function handleImageChange(event){
+    //     setImageUrl(event.target.value)
+    // }
 
   return (
     <form className='add-product-form'>
-    {title} <br/>
-    {price} <br/>
-    {imageUrl} <br/>
+    {product.title} <br/>
+    {product.price} <br/>
+    {product.imageUrl} <br/>
     <label>
         Title:
-        <input type="text" name="title" onChange={handleTitleChange}/>
+        <input type="text" name="title" onChange={handleChange}/>
     </label>
     <label>
         Title:
-        <input type="number" name="price" onChange={handlePriceChange}/>
+        <input type="number" name="price" onChange={handleChange}/>
     </label>
     <label>
         Title:
-        <input type="text" name="imageUrl" onChange={handleImageChange}/>
+        <input type="text" name="imageUrl" onChange={handleChange}/>
     </label>
     <Button color="success">Yeni Ürün Ekle</Button>
 
