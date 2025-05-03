@@ -1,8 +1,8 @@
 /** @format */
 
-import ProductItem from "./components/Products/ProductItem";
+import ProductItem from "./ProductItem";
 import { useState } from "react";
-import { productsData } from "./data/productsData";
+import { productsData } from "../../data/productsData";
 import "./Products.css";
 
 function Products() {

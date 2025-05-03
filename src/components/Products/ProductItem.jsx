@@ -1,18 +1,15 @@
 import { useState } from "react";
  import "./ProductItem.css";
+ import Button from "../UI/Button";
  
  function ProductItem(props) {
    const { image, globalTitle, setGlobalTitle, title, price } = props;
+   const { image, title, price } = props;
    const [localTitleState, setTitleLocalState] = useState(title);
  
-   console.log(props);
- 
    function handleTitleChange() {
-     setGlobalTitle("Yüzük");
      setTitleLocalState("Yüzük");
    }
- 
-   console.log("component render edildi!");
  
    return (
      <div className="product-item">
@@ -20,12 +17,12 @@ import { useState } from "react";
          <img src={image} alt="Soda" />
        </div>
        <div className="product-info">
-         <b className="product-title">
-           {globalTitle !== "" ? globalTitle : title}
-         </b>
          <b className="product-title">{localTitleState}</b>
          <span className="product-price">{price}₺</span>
-         <button onClick={handleTitleChange}>Title Değiştir!</button>
+         <Button color="primary" size="sm" onClick={handleTitleChange}>Title Değiştir!</Button>
+         <Button color="primary" size="sm" onClick={handleTitleChange}>
+           Title Değiştir!
+         </Button>
        </div>
      </div>
    );
