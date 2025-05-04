@@ -1,6 +1,4 @@
-
 import "./Button.css";
-
 
 function Button({ color, size, addClass, title, children, onClick }) {
   /*   const { color, size, addClass, title } = props; */

@@ -1,30 +1,26 @@
-/** @format */
-
-import ProductItem from "./ProductItem";
 import { useState } from "react";
+import AddProduct from "./AddProduct";
+import ProductItem from "./ProductItem";
 import { productsData } from "../../data/productsData";
 import "./Products.css";
 
 function Products() {
-
-  const [globalTitle,setGlobalTitle] = useState("")
+  const [products, setProducts] = useState(productsData);
 
   return (
-    <div>
+    <div className="products">
       <h1>Products Component</h1>
+      <AddProduct setProducts={setProducts} />
       <div className="products-wrapper">
-        {
-            productsData.map((product) => (
-                <ProductItem
-                key={product.id}
-                image={product.image}
-                title={product.title}
-                price={product.price}
-                globalTitle={globalTitle}
-                setGlobalTitle={setGlobalTitle}
-             />
-            ))
-        }
+        {products.map((product) => (
+          <ProductItem
+            key={product.id}
+            image={product.image}
+            title={product.title}
+            price={product.price}
+            category={product.category}
+          />
+        ))}
       </div>
     </div>
   );

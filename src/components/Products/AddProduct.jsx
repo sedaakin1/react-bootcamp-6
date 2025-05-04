@@ -1,57 +1,80 @@
-
 import React, { useState } from "react";
- import Button from "../UI/Button";
- import "./AddProduct.css";
+import Button from "../UI/Button";
+import "./AddProduct.css";
+import ProductInput from "./ProductInput";
 
-const AddProduct = () => {
+const productInputs = [
+  {
+    label: "Title",
+    type: "text",
+    name: "title",
+    placeholder: "Bir Title Giriniz.",
+  },
+  {
+    label: "Price",
+    type: "number",
+    name: "price",
+    placeholder: "Bir Price Giriniz.",
+  },
+  {
+    label: "Image URL",
+    type: "text",
+    name: "imageUrl",
+    placeholder: "Bir Image URL Giriniz.",
+  },
+  {
+    label: "Category",
+    type: "text",
+    name: "category",
+    placeholder: "Bir Category Giriniz.",
+  },
+];
 
-    const [product, setProduct] = useState({
+const AddProduct = ({ setProducts }) => {
+  const [product, setProduct] = useState({
+    title: "",
+    price: "",
+    imageUrl: "",
+    category: "",
+  });
 
-        title:"",
-        price: "",
-        imageUrl: "",
-    })
+  function handleChange({ target: { name, value } }) {
+    setProduct({ ...product, [name]: value });
+  }
 
-    function handleChange({target: {name, value}}){
-        setProduct({...product,[name]: value })
-    }       
+  function handleSubmit(event) {
+    event.preventDefault();
 
+    // console.log(Object.keys(product));
+    const isFormValid = Object.values(product).every(
+      (value) => value.trim() !== ""
+    );
 
-    // const [title, setTitle] = useState("");
-    // const [price, setPrice] = useState(0);
-    // const [imageUrl, setImageUrl] = useState("");
+    if (!isFormValid) {
+      alert("Lütfen inputları doldurun!");
+      return;
+    }
 
-    // function handleTitleChange(event){
-    //     setTitle(event.target.value)
-    // }
-    // function handlePriceChange(event){
-    //     setPrice(event.target.value)
-    // }
-    // function handleImageChange(event){
-    //     setImageUrl(event.target.value)
-    // }
+    const { imageUrl: image, price, title, category } = product;
+    const newProduct = {
+      id: Math.random(),
+      title,
+      price: Number(price),
+      image,
+      category,
+    };
+
+    setProducts((prevState) => [newProduct, ...prevState]);
+  }
 
   return (
-    <form className='add-product-form'>
-    {product.title} <br/>
-    {product.price} <br/>
-    {product.imageUrl} <br/>
-    <label>
-        Title:
-        <input type="text" name="title" onChange={handleChange}/>
-    </label>
-    <label>
-        Title:
-        <input type="number" name="price" onChange={handleChange}/>
-    </label>
-    <label>
-        Title:
-        <input type="text" name="imageUrl" onChange={handleChange}/>
-    </label>
-    <Button color="success">Yeni Ürün Ekle</Button>
-
+    <form className="add-product-form" onSubmit={handleSubmit}>
+      {productInputs.map((input, index) => (
+        <ProductInput key={index} {...input} handleChange={handleChange} />
+      ))}
+      <Button color="success">Yeni Ürün Ekle</Button>
     </form>
-  )
-}
+  );
+};
 
-export default AddProduct
+export default AddProduct;
