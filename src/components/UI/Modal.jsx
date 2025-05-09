@@ -1,12 +1,13 @@
+import { createPortal } from "react-dom";
 import "./Modal.css";
 
 const Modal = ({ setIsShowModal }) => {
   function handleModelClose() {
     setIsShowModal(false);
   }
-  return (
+  return createPortal(
     <div className="modal">
-       <div className="modal-overlay" onClick={handleModelClose}></div>
+      <div className="modal-overlay" onClick={handleModelClose}></div>
       <div className="modal-content">
         <div className="modal-header">
           <h5 className="modal-title">Modal Başlığı</h5>
@@ -30,7 +31,9 @@ const Modal = ({ setIsShowModal }) => {
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.getElementById("modal-root")
+    
   );
 };
 
