@@ -65,12 +65,22 @@ const AddProduct = ({ setProducts }) => {
     };
 
     setProducts((prevState) => [newProduct, ...prevState]);
+
+    //form temizleme
+    setProduct({
+      title: "",
+    price: "",
+    imageUrl: "",
+    category: "",
+    })
   }
 
   return (
     <form className="add-product-form" onSubmit={handleSubmit}>
       {productInputs.map((input, index) => (
-        <ProductInput key={index} {...input} handleChange={handleChange} />
+        <ProductInput key={index} {...input} 
+        value={product[input.name]}
+        handleChange={handleChange} />
       ))}
       <Button color="success">Yeni Ürün Ekle</Button>
     </form>

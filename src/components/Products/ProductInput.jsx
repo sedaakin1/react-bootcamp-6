@@ -1,6 +1,13 @@
-import React from "react";
 
-const ProductInput = ({ label, type, name, placeholder, handleChange }) => {
+
+const ProductInput = ({
+  label,
+  type,
+  name,
+  placeholder,
+  value,
+  handleChange,
+}) => {
   return (
     <label>
       {label}:
@@ -9,6 +16,7 @@ const ProductInput = ({ label, type, name, placeholder, handleChange }) => {
         name={name}
         placeholder={placeholder}
         onChange={handleChange}
+        value={value}
       />
     </label>
   );
