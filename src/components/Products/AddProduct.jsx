@@ -30,7 +30,7 @@ const productInputs = [
   },
 ];
 
-const AddProduct = ({ setProducts }) => {
+const AddProduct = ({ setProducts, setIsShowModal }) => {
   const [product, setProduct] = useState({
     title: "",
     price: "",
@@ -52,6 +52,7 @@ const AddProduct = ({ setProducts }) => {
 
     if (!isFormValid) {
       alert("Lütfen inputları doldurun!");
+       setIsShowModal(true);
       return;
     }
 
