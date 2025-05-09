@@ -12,9 +12,7 @@ function Products() {
   return (
     <div className="products">
       <h1>Products Component</h1>
-      <AddProduct setProducts={setProducts} />
-        <Modal />
-        <AddProduct setProducts={setProducts} setIsShowModal={setIsShowModal} />
+      <AddProduct setProducts={setProducts} setIsShowModal={setIsShowModal} />
       {isShowModal && <Modal setIsShowModal={setIsShowModal} />}
       <div className="products-wrapper">
         {products.map((product) => (
