@@ -4,7 +4,7 @@ import "./ProductItem.css";
 
 function ProductItem(props) {
 
-  const { id, image, title, price, category, onDeleteItem} = props;
+  const { id, image, title, price, description, category, onDeleteItem} = props;
 
   return (
     <div className="product-item">
@@ -13,7 +13,8 @@ function ProductItem(props) {
       </div>
       <div className="product-info">
         <span className="product-category">{category}</span>
-        <b className="product-title">{title}</b>
+        <b className="product-title line-clamp-1">{title}</b>
+        <span className="product-description line-clamp-2">{description}</span>
         <span className="product-price">{price}₺</span>
         <Button color="danger" size="sm" 
           onClick={()=>onDeleteItem(id)}>

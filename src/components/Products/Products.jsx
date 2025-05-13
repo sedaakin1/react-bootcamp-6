@@ -16,7 +16,7 @@ function Products() {
 
   return (
     <div className="products">
-      <h1>Products Component</h1>
+      <h1 className="text 2-xl font-bold">Products Component</h1>
       <AddProduct setProducts={setProducts} setIsShowModal={setIsShowModal} />
       {isShowModal && (
         <Modal
@@ -33,6 +33,7 @@ function Products() {
             image={product.image}
             title={product.title}
             price={product.price}
+            description={product.description}
             category={product.category}
             onDeleteItem={handleDeleteItem}
           />
