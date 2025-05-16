@@ -1,18 +1,7 @@
 
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-
-const schema = yup.object({
-  email: yup
-    .string()
-    .email("Geçerli bir e-posta girin")
-    .required("E-posta zorunlu"),
-  password: yup
-    .string()
-    .min(6, "Şifre en az 6 karakter olmalı")
-    .required("Şifre zorunlu"),
-});
+import { loginSchema } from "../../schemas/auth/loginSchema";
 
 const LoginForm = () => {
   const {
@@ -20,7 +9,7 @@ const LoginForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(schema),
+     resolver: yupResolver(loginSchema),
     mode: "onBlur",
   });
 
