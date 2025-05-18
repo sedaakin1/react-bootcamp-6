@@ -4,7 +4,17 @@ import "./ProductItem.css";
 
 function ProductItem(props) {
 
-  const { id, image, title, price, description, category, onDeleteItem} = props;
+  const {
+    id,
+    image,
+    title,
+    description,
+    price,
+    category,
+    onDeleteItem,
+    addToCart,
+  } = props;
+  const productItem = { id, image, title, description, price, category };
 
   return (
     <div className="product-item">
@@ -16,6 +26,14 @@ function ProductItem(props) {
         <b className="product-title line-clamp-1">{title}</b>
         <span className="product-description line-clamp-2">{description}</span>
         <span className="product-price">{price}₺</span>
+        <Button
+          color="primary"
+          size="sm"
+          onClick={() => addToCart(productItem)}
+        >
+          Sepete Ekle
+        </Button>
+        
         <Button color="danger" size="sm" 
           onClick={()=>onDeleteItem(id)}>
           Ürünü Sil
