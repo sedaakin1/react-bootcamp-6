@@ -4,7 +4,9 @@ const CartProvider = ({ children }) => {
   const fullName = "Seda Akın";
 
   return (
-    <CartContext.Provider value={fullName}>{children}</CartContext.Provider>
+    <CartContext.Provider value={fullName}>
+      {children}
+    </CartContext.Provider>
   );
 };
 

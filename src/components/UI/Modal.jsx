@@ -1,8 +1,8 @@
 import { createPortal } from "react-dom";
-
 import { useContext, useEffect, useState } from "react";
-import { CartContext } from "../../context/CartContext";
+
 import "./Modal.css";
+import { CartContext } from "../../context/CartContext";
 
 const Modal = ({ setIsShowModal, title, desc }) => {
    const [count, setCount] = useState(0);
@@ -28,6 +28,7 @@ const Modal = ({ setIsShowModal, title, desc }) => {
       clearInterval(id);
     };
   }, []);
+
   console.log(data);
 
   return createPortal(
