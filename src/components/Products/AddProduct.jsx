@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import { useContext, useState } from "react";
 import Button from "../UI/Button";
-import "./AddProduct.css";
 import ProductInput from "./ProductInput";
+import { CartContext } from "../../context/CartContext";
+import "./AddProduct.css";
 
 const productInputs = [
   {
@@ -38,6 +39,10 @@ const AddProduct = ({ setProducts, setIsShowModal }) => {
     category: "",
   });
 
+  const data = useContext(CartContext);
+
+  console.log(data);
+
   function handleChange({ target: { name, value } }) {
     setProduct({ ...product, [name]: value });
   }
@@ -45,7 +50,7 @@ const AddProduct = ({ setProducts, setIsShowModal }) => {
   function handleSubmit(event) {
     event.preventDefault();
 
-    // console.log(Object.keys(product));
+   
     const isFormValid = Object.values(product).every(
       (value) => value.trim() !== ""
     );
