@@ -17,7 +17,6 @@ function App() {
       <div className="pt-4">
         <Products />
       </div>
-      
     </div>
   );
 }
