@@ -3,6 +3,10 @@ import Header from "./components/Layout/Header";
 import Products from "./components/Products/Products";
 import { ThemeContext } from "./context/ThemeProvider";
 import Cart from "./components/Cart/Cart";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import CartPage from "./pages/CartPage";
+
 
 function App() {
   const { darkMode } = useContext(ThemeContext);
@@ -18,9 +22,13 @@ function App() {
     >
       <Header />
       <div className="pt-4">
-        
-        <Cart />
         {/* <Products /> */}
+        <Cart />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/cart" element={<CartPage />} />
+        </Routes>
+
       </div>
     </div>
   );
