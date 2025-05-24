@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import Header from "./components/Layout/Header";
-import Products from "./components/Products/Products";
+// import Products from "./components/Products/Products";
 import { ThemeContext } from "./context/ThemeProvider";
 import Cart from "./components/Cart/Cart";
 import { Route, Routes } from "react-router-dom";
