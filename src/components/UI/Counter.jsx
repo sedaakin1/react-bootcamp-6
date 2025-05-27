@@ -1,7 +1,8 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const Counter = () => {
     const { count } = useSelector((state) => state.counter);
+    const dispatch = useDispatch();
 
      console.log("data:", count);
      
@@ -9,13 +10,14 @@ const Counter = () => {
     <div className="counter flex mt-2 items-center gap-2">
     <button
         className="bg-green-500 p-3 rounded-md"
-        nClick={() => {
-          () => {};
-        }}>
+        onClick={() => dispatch(arttir())}
+    >
     </button>
     <span className="font-bold">{count}</span>
-    <button className="bg-red-500 p-3 rounded-md" 
-       onClick={() => {}}>
+    <button
+        className="bg-red-500 p-3 rounded-md"
+        onClick={() => dispatch(azalt())}
+    >
     </button>
     </div>
   );
