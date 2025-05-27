@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import Header from "./components/Layout/Header";
-// import Products from "./components/Products/Products";
 import { ThemeContext } from "./context/ThemeProvider";
 import Cart from "./components/Cart/Cart";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import CartPage from "./pages/CartPage";
+import Counter from "./components/UI/Counter";
 
 
 function App() {
@@ -22,8 +22,8 @@ function App() {
     >
       <Header />
       <div className="pt-4">
-        {/* <Products /> */}
-        <Cart />
+        
+        <Counter />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/cart" element={<CartPage />} />
