@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import Header from "./components/Layout/Header";
 import { ThemeContext } from "./context/ThemeProvider";
-import Cart from "./components/Cart/Cart";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import CartPage from "./pages/CartPage";
 import Counter from "./components/UI/Counter";
+import { ToastContainer } from 'react-toastify';
 
 
 function App() {
@@ -20,6 +20,7 @@ function App() {
         color: `${darkMode ? "white" : "black"}`,
       }}
     >
+      <ToastContainer />
       <Header />
       <div className="pt-4">
         

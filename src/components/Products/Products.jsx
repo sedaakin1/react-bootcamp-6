@@ -4,6 +4,7 @@ import ProductItem from "./ProductItem";
 import Modal from "../UI/Modal";
 import { reducerFunction, initialState } from "./productReducer";
 import "./Products.css";
+import { Flip, toast } from "react-toastify";
 
 
 function Products(){
@@ -13,6 +14,17 @@ function Products(){
   function handleDeleteItem(productId) {
     dispatch({ 
       type: "DELETE_PRODUCT", payload: productId 
+    });
+    toast.success("Ürün başarıyla silindi!", {
+      position: "top-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Flip,
     });
   }
 
