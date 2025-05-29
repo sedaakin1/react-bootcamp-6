@@ -35,7 +35,7 @@ const cartSlice = createSlice({
         transition: Zoom,
       });
     },
-    removeFromCart: () => {},
+    
     removeFromCart: (state, { payload: productId }) => {
       const filteredCartItems = state.cartItems.filter(
         (item) => item.id !== productId

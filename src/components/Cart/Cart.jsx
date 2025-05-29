@@ -1,6 +1,4 @@
-import React, { useContext } from "react";
-import { Trash2, Plus, Minus } from "lucide-react"; // Lucide ikonlarını kullanmak için
-import { CartContext } from "../../context/CartContext";
+import { Trash2, Plus, Minus } from "lucide-react"; 
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart } from "../../redux/cartSlice";
 const Cart = () => {
