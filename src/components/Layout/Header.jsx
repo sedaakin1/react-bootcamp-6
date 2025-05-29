@@ -3,9 +3,9 @@ import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { ThemeContext } from "../../context/ThemeProvider";
 import { Link } from 'react-router-dom';
-
+import { useSelector } from "react-redux";
 const Header = () => {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems } = useSelector((state) => state.cart);
   const { darkMode, toggleTheme } = useContext(ThemeContext);
 
   return (
