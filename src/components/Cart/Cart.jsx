@@ -6,6 +6,8 @@ const Cart = () => {
 
   const { cartItems } = useContext(CartContext);
 
+  console.log(cartItems);
+
   return (
     <div className="mx-auto p-4 bg-white rounded-2xl shadow-lg">
       <h2 className="text-2xl font-bold mb-4">Sepetim</h2>
