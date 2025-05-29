@@ -1,12 +1,14 @@
 import React, { useContext } from "react";
 import { Trash2, Plus, Minus } from "lucide-react"; // Lucide ikonlarını kullanmak için
 import { CartContext } from "../../context/CartContext";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { removeFromCart } from "../../redux/cartSlice";
 const Cart = () => {
 
   const { cartItems } = useSelector((state) => state.cart);
 
-  
+  const dispatch = useDispatch();
+
   return (
     <div className="mx-auto p-4 bg-white rounded-2xl shadow-lg">
       <h2 className="text-2xl font-bold mb-4">Sepetim</h2>
@@ -36,6 +38,10 @@ const Cart = () => {
                 {(item.quantity * item.price).toFixed(2)}₺
               </span>
               <button className="mt-2 text-red-500 hover:text-red-700">
+              <button
+                className="mt-2 text-red-500 hover:text-red-700"
+                onClick={() => dispatch(removeFromCart(item.id))}
+              ></button>
                 <Trash2 size={18} />
               </button>
             </div>
