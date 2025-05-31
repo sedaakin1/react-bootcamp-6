@@ -8,7 +8,7 @@ const LoginPage = () => {
     <div className="login-page min-h-[80vh] py-12 px-4 flex items-center justify-center">
       <div className="w-full max-w-4xl grid md:grid-cols-2 bg-white rounded-2xl shadow-xl overflow-hidden">
         {/* Sol Taraf - Tanıtım Alanı */}
-        <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-8 text-white flex flex-col relative hidden md:flex">
+        <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-8 text-white flex flex-col relative md:flex">
           <div className="flex items-center mb-6">
             <ShoppingBag size={32} />
             <span className="text-2xl font-bold ml-2">E-Ticaret</span>
