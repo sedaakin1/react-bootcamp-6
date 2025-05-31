@@ -1,4 +1,4 @@
-import React from "react";Add commentMore actions
+import React from "react";
 import { Link } from "react-router-dom";
 import LoginForm from "../components/Auth/LoginForm";
 import { ShoppingBag } from "lucide-react";

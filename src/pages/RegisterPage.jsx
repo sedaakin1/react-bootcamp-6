@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';Add commentMore actions
+import { Link } from 'react-router-dom';
 import RegisterForm from '../components/Auth/RegisterForm';
 import { ShoppingBag, ShieldCheck } from 'lucide-react';
 
